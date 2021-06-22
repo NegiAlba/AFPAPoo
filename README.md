@@ -27,3 +27,16 @@ Parent : Utilisateur
   v
 Enfant : Admin & Modérateur
 
+## Composants de la POO
+
+### Classes
+
+Les classes sont la façon de déterminer la structure des données. C'est le squelette de ces données.
+
+    - **Propriétés** : Ce sont les variables que chaque objet (ou instances) de la classe vont posséder.
+    - **Méthodes** : Ce sont les fonctions propres à cette classe que chaque objet (ou instance) de la classe vont posséder.
+    - **Accesseurs/Modificateurs** (Getters/Setters) : Ce sont les fonctions de base qui permettent d'accéder et de modifier les propriétés des objets.
+
+### Objets
+
+Les objets sont un type de données primitive, qui permettent d'instancier la classe. Cela signifie que la classe devient concrète pour un cas précis.
