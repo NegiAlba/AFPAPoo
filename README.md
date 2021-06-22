@@ -11,3 +11,19 @@ Ce sera plus facile de coder en équipe en passant par de l'orienté objet.
 - Meilleure encapsulation et sécurisation des données
 
 ## Principes de base de la POO
+
+- Abstraction : La façon de déterminer les informations nécessaires pour une entité dans le monde extérieur
+
+- Héritage : Le concept de la hiérarchisation du débit de données. Les données devront naviguer du haut vers le bas.
+
+- Encapsulation : Le concept qui permet de décider les données qui navigueront verticalement. (Visibilité
+)
+- Polymorphisme : Le concept qui permet de déterminer les changements de comportements en lien avec le besoin créé par l'héritage.
+
+Input -> [POO] -> Output
+
+Parent : Utilisateur
+  |
+  v
+Enfant : Admin & Modérateur
+
