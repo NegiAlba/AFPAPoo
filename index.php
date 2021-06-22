@@ -1,29 +1,26 @@
 <?php
+    //? Fonction php qui permet d'éxécuter une callback à chaque fois que PHP n'arrive pas à accéder à une ressource.
+    spl_autoload_register(
+        function ($class) {
+            require_once 'classes/'.$class.'.php';
+        }
+    );
 
-class Shape
-{
-    //Propriétés avec des modificateurs d'accès
-    private $height;
-    public $width;
-
-    //Getters : Accesseurs de données
-    //? $this signifie que ma réference c'est l'objet en cours d'utilisation.
-    public function getHeight()
-    {
-        return $this->height;
-    }
-
-    //Setters : Modificateurs de données
-
-    public function setHeight($height)
-    {
-        $this->height = $height;
-    }
-}
-
-//* Pour créer un objet, il faut d'abord lui assigner une variable et ensuite instancier la classe avec new + LeNomDeLaClasse().
-
-$shape1 = new Shape();
-// $shape2 = new Shape();
-
-var_dump($shape1->getHeight());
+    $elephant = new Mammifere('Eléphant', 'Babar', 4);
+    $chien = new Mammifere('Chien', 'PasOriginal', 4);
+    $coq = new Ovipare('Coq', 'Footix', 2);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO</title>
+</head>
+<body>
+    <h2><?php echo $elephant->identify(); ?></h2>
+    <h2><?php echo $chien->identify(); ?></h2>
+    <h2><?php echo $coq->identify(); ?></h2>
+</body>
+</html>
