@@ -38,6 +38,23 @@ class User
      */
     protected $phoneNumber;
 
+    //! Magic Methods
+
+    public function __construct($firstName, $lastName, $email, $password, $phoneNumber)
+    {
+        $this->setFirstName($firstName);
+        $this->setLastName($lastName);
+        $this->setEmail($email);
+        $this->setPassword($password);
+        $this->setPhoneNumber($phoneNumber);
+    }
+
+    public function __toString()
+    {
+
+        return $this->getFullName();
+    }
+
     //! Getters & Setters
 
     /**
@@ -161,5 +178,12 @@ class User
     public function getFullName()
     {
         return "{$this->firstName} {$this->lastName}";
+    }
+
+    public function identify()
+    {
+        $allInfos = "User is named {$this->getFullName()} , his email is {$this->email} and phone number is {$this->phoneNumber}";
+
+        return $allInfos;
     }
 }
