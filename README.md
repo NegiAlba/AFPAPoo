@@ -1,4 +1,4 @@
-# PHP Programmation Orientée Objet
+# PHP Programmation Orientée Objet - Intro
 
 ## Ce qu'elle apporte
 
@@ -44,4 +44,7 @@ Les classes sont la façon de déterminer la structure des données. C'est le sq
 ### Objets
 
 Les objets sont un type de données primitive, qui permettent d'instancier la classe. Cela signifie que la classe devient concrète pour un cas précis.
+
+# Projet Blog POO
+
 
