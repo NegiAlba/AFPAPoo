@@ -45,6 +45,5 @@ Les classes sont la façon de déterminer la structure des données. C'est le sq
 
 Les objets sont un type de données primitive, qui permettent d'instancier la classe. Cela signifie que la classe devient concrète pour un cas précis.
 
-# Projet Blog POO
 
 

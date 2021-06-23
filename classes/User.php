@@ -1,0 +1,95 @@
+<?php
+
+class User
+{
+    /**
+     * Email for user.
+     *
+     * @var string
+     */
+    private $email;
+
+    /**
+     * Password for user - hashed.
+     *
+     * @var string
+     */
+    private $password;
+
+    /**
+     * Nickname for user.
+     *
+     * @var string
+     */
+    private $username;
+
+    /**
+     * Get email for user.
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set email for user.
+     *
+     * @param string $email Email for user
+     *
+     * @return self
+     */
+    public function setEmail(string $email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get password for user - hashed.
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set password for user - hashed.
+     *
+     * @param string $password Password for user - hashed
+     *
+     * @return self
+     */
+    public function setPassword(string $password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get nickname for user.
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Set nickname for user.
+     *
+     * @param string $username Nickname for user
+     *
+     * @return self
+     */
+    public function setUsername(string $username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+}
