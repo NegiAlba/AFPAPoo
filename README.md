@@ -45,6 +45,10 @@ Les classes sont la façon de déterminer la structure des données. C'est le sq
 
 Les objets sont un type de données primitive, qui permettent d'instancier la classe. Cela signifie que la classe devient concrète pour un cas précis.
 
+### Namespaces
+
+Les namespaces sont des environnements d'exécution du code qui fonctionnent comme des couches (layers). Par défaut le namespace est le namespace global, c'est à dire que c'est l'environnement qui englobe toute votre application. Toutes les classes sont déclarées dans le même environnement par défaut. Créer un nouveau namespace sert à profiter d'un environnement stérile et libre de toutes variables/méthodes/fonctions.
+
 # Projet Blog POO
 
 
