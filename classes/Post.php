@@ -23,6 +23,22 @@ class Post
      */
     private $author;
 
+    public function __construct(array $data)
+    {
+        $this->hydrate($data);
+    }
+
+    public function hydrate(array $dataForObj)
+    {
+        foreach ($dataForObj as $key => $value) {
+            $method = 'set'.ucfirst($key);
+
+            if (method_exists($this, $method)) {
+                $this->{$method}($value);
+            }
+        }
+    }
+
     /**
      * Get content for posts.
      *
@@ -64,7 +80,7 @@ class Post
      *
      * @return self
      */
-    public function setCreatedAt(DateTime $createdAt)
+    public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
 

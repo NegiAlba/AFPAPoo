@@ -3,7 +3,7 @@
 abstract class DAO
 {
     //! DB connection
-    private $db;
+    protected $db;
 
     public function __construct()
     {
@@ -16,6 +16,7 @@ abstract class DAO
         try {
             $this->db = new PDO(DB_HOST, DB_USER, DB_PASS);
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
             return $this->db;
         } catch (PDOException $e) {
@@ -30,5 +31,13 @@ abstract class DAO
         }
 
         return $this->db;
+    }
+
+    public function createQuery($sql, $params = null)
+    {
+        $query = $this->db->prepare($sql);
+        $query->execute($params);
+
+        return $query;
     }
 }

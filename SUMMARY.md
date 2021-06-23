@@ -31,7 +31,9 @@
 
 ### Marche à suivre
 
-- Création classes (OK)
+- Création classes (OK) (Propriétés + Getters & Setters + Construct & Hydrate )
 - Création BDD (OK)
 - Mise en place de l'UI (OK)
 - Mise en place de la logique du social network
+    - Inscription : Création du formulaire en HTML + Création d'une page qui récupère les données POSTées via form et assainit les variables + Création d'une méthode d'inscription dans UserDAO qui réalise la requête d'insertion après vérification dans la BDD.
+    - Lecture des posts : Création d'une méthode de lecture des posts (findAll depuis la BDD)
