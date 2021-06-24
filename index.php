@@ -28,7 +28,9 @@
         $thomas = new Admin('Thomas', 'Delalbre', 'thomas@delalbre.com', '543216', '0123456789');
         $thomas->setNickname('TDAdmin');
         echo $thomas->identify();
-
-        ?>
+        echo '<br/>';
+        $add5and10 = new Calculator(5, 10);
+        echo $add5and10->multiply();
+    ?>
 </body>
 </html>
