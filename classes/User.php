@@ -2,6 +2,14 @@
 
 class User
 {
+
+    /**
+     * Id of user in DB
+     *
+     * @var Int
+     */
+    private $id;
+
     /**
      * Email for user.
      *
@@ -105,6 +113,30 @@ class User
     public function setUsername(string $username)
     {
         $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get id of user in DB
+     *
+     * @return  Int
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set id of user in DB
+     *
+     * @param  Int  $id  Id of user in DB
+     *
+     * @return  self
+     */ 
+    public function setId(Int $id)
+    {
+        $this->id = $id;
 
         return $this;
     }

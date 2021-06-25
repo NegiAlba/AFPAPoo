@@ -27,7 +27,10 @@
 
 - **Page de création de posts (ou alors un formulaire de création qui s'affiche sur la page d'accueil si on est connectés)** : Une méthode createPost
 
-- Page de profil qui permet de consulter ses propres posts/ceux d'un utilisateur spécifique
+- Page de profil qui permet de consulter ses propres posts/ceux d'un utilisateur spécifique :
+    - Requete avec identifiant unique
+    - Récupérer infos du profil
+    - /profile?username=xxx
 
 ### Marche à suivre
 
@@ -37,3 +40,15 @@
 - Mise en place de la logique du social network
     - Inscription : Création du formulaire en HTML + Création d'une page qui récupère les données POSTées via form et assainit les variables + Création d'une méthode d'inscription dans UserDAO qui réalise la requête d'insertion après vérification dans la BDD.
     - Lecture des posts : Création d'une méthode de lecture des posts (findAll depuis la BDD)
+    - Connexion : Création du formulaire en HTML + Création de token de session via formulaire de connexion.
+    - Déconnexion : Création d'une requête GET qui gère la déconnexion sur toute l'appli.
+    - Création des posts : Création d'une méthode de création des posts via un formulaire qui récupère automatiquement l'utilisateur connecté
+
+
+# Méthodes CRUD (les plus utilisées)
+- C : Create - généralement par form
+- R : Read - Liste ou autre
+- R1 : Read One - Affichage d'une seule unité
+- RBX : Read by X - Lecture croisée avec une jointure de table
+- U : Update - généralement par form
+- D : Delete - par redirection instantanée ou avec confirmation

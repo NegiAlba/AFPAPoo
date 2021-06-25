@@ -1,10 +1,15 @@
 <?php
 require_once './config/config.php';
+
+if(!isset($_GET['username'])){
+    return header('Location:index.php');
+}
 $postDAO = new PostDAO();
 $userDAO = new UserDAO();
 $user = $userDAO->setUser();
+$username = $_GET['username'];
 
-$posts = $postDAO->findAll();
+$posts = $postDAO->findByUser($username);
 ?>
 
 <!doctype html>
@@ -20,7 +25,7 @@ $posts = $postDAO->findAll();
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>Profile page of <?php echo $username; ?> </h1>
 
     <?php if (isset($_GET['c'])) {
     echo '<div class="alert alert-success">
@@ -43,15 +48,20 @@ $posts = $postDAO->findAll();
     <button type="submit" name="new_submit" class="btn btn-secondary">Post</button>
   </form>
 </section>
+<hr>
 <section id="posts" class="container">
   <?php
     foreach ($posts as $post) {
         ?>
-      <div class="post-item">
-        <div class="post-author"> <?php echo $post->getAuthor(); ?></div>
+      <div class="post-item my-2">
         <div class="post-content"><?php echo $post->getContent(); ?></div>
         <div class="post-date"><?php echo $post->getCreatedAt(); ?></div>
+        <?php if($username === $user->getUsername()){
+            echo '<button class="btn-danger btn">Delete Post</button>';
+        }
+        ?>
       </div>
+      <hr>
     <?php
     }
   ?>

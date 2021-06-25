@@ -9,23 +9,58 @@ class UserDAO extends DAO
      */
     private $user;
 
+    public function __construct()
+    {
+        parent::__construct();
+        session_start();
+    }
+
+    public function setUser()
+    {
+        if (isset($_SESSION['id'])) {
+            $database = "SELECT * FROM user WHERE id = '{$_SESSION['id']}' AND email = '{$_SESSION['email']}'";
+            $data = $this->createQuery($database)->fetch();
+
+            return new User($data);
+        }
+
+        return null;
+    }
+
     public function connect($data)
     {
-        return $this->user = new User($data);
+        $exist = "SELECT * FROM user WHERE email = '{$data['email']}'";
+        $result = $this->createQuery($exist)->fetch();
+
+        if ($result) {
+            if (password_verify($data['password'], $result['password'])) {
+                $_SESSION['email'] = $result['email'];
+                $_SESSION['username'] = $result['username'];
+                $_SESSION['id'] = $result['id'];
+                
+                return new User($result);
+            }
+        }
+
+        return 'Identifiants invalides';
     }
 
     public function disconnect()
     {
+        session_destroy();
+
+        return "Disconnected";
     }
 
     public function signup($data)
     {
-        /**
+        /*
          * ! Un bloc d'instructions relatifs à l'inscription
          * ? Vérification des infos (existence)
          * ? Vérification de la validité (sur process.php)
          * ? Insertion dans la BDD.
          */
+
         $existEmail = "SELECT * FROM user WHERE email = '{$data['email']}'";
         $resultEmail = $this->createQuery($existEmail)->fetch();
         $existUsername = "SELECT * FROM user WHERE username = '{$data['username']}'";
