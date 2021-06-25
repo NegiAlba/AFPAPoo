@@ -1,5 +1,7 @@
 <?php
 
+namespace App\src\models;
+
 class Post
 {
     /**

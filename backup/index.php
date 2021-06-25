@@ -1,11 +1,3 @@
-<?php
-require_once './config/config.php';
-$postDAO = new PostDAO();
-$userDAO = new UserDAO();
-$user = $userDAO->setUser();
-
-$posts = $postDAO->findAll();
-?>
 
 <!doctype html>
 <html lang="en">

@@ -1,5 +1,11 @@
 <?php
 
+namespace App\src\DAO;
+
+use App\src\models\Post;
+
+
+
 class PostDAO extends DAO
 {
     //! Post management
@@ -12,14 +18,13 @@ class PostDAO extends DAO
     public function findAll()
     {
         $posts = [];
-        $bddFind = 'SELECT * FROM post ORDER BY createdAt DESC';
+        $bddFind = 'SELECT p.*, u.username FROM post AS p INNER JOIN user AS u ON p.author = u.id ORDER BY createdAt DESC';
         $result = $this->createQuery($bddFind)->fetchAll();
 
         foreach ($result as $data) {
             $id = $data['id'];
             $posts[$id] = $this->buildPost($data);
         }
-
         return $posts;
     }
 

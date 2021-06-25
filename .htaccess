@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^/afpapoo/$
+RewriteRule (.*) http://localhost/afpapoo/$1 [R=301,L]
+RewriteRule ^$ public [L]

@@ -1,0 +1,17 @@
+{
+    "name": "lilkr/afpapoo",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Axel Gromat",
+            "email": "axel.gromat@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload" : {
+        "psr-4":{
+            "App\\src\\" : "src/"
+        }
+    }
+}

@@ -1,5 +1,10 @@
 <?php
 
+namespace App\src\DAO;
+
+use PDO;
+use PDOException;
+
 abstract class DAO
 {
     //! DB connection

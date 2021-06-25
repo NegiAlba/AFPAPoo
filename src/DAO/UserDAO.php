@@ -1,5 +1,10 @@
 <?php
 
+namespace App\src\DAO;
+
+use App\src\models\User;
+
+
 class UserDAO extends DAO
 {
     /**
@@ -42,7 +47,7 @@ class UserDAO extends DAO
             }
         }
 
-        return 'Identifiants invalides';
+        return null;
     }
 
     public function disconnect()
